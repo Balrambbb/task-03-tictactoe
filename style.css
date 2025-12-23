@@ -1,0 +1,209 @@
+body{
+  text-align:center;
+  font-family:Arial, sans-serif;
+  background:#1b1b2f;
+  color:white;
+}
+
+/* BOARD */
+.board{
+  display:grid;
+  grid-template-columns:repeat(3,100px);
+  gap:12px;
+  justify-content:center;
+  margin:20px auto;
+}
+
+.cell{
+  width:100px;
+  height:100px;
+  background:#16213e;
+  font-size:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.cell:hover{
+  background:#0f3460;
+}
+
+/* TURN TEXT */
+#turn{
+  color:#ffcc00;
+}
+
+/* BUTTON */
+button{
+  padding:10px 25px;
+  font-size:16px;
+  border:none;
+  border-radius:20px;
+  background:#ffcc00;
+  cursor:pointer;
+}
+
+/* LIGHTING EFFECT */
+body.win{
+  animation:flash 0.4s alternate infinite;
+}
+
+@keyframes flash{
+  from{box-shadow:0 0 20px #fff inset;}
+  to{box-shadow:0 0 80px #ffcc00 inset;}
+}
+
+/* BALLOONS */
+#celebration{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.balloon{
+  width:30px;
+  height:40px;
+  border-radius:50%;
+  position:absolute;
+  bottom:-50px;
+  animation:fly 4s linear forwards;
+}
+
+.balloon::after{
+  content:"";
+  width:2px;
+  height:15px;
+  background:white;
+  position:absolute;
+  left:50%;
+  top:40px;
+}
+
+@keyframes fly{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120vh);}
+}
+
+
+
+
+
+/* PAGE STYLE */
+body{
+  text-align:center;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  min-height:100vh;
+  margin:0;
+  padding-top:40px;
+  color:white;
+}
+
+/* TITLE */
+h1{
+  font-size:40px;
+  margin-bottom:10px;
+  animation:fadeDown 1s ease;
+}
+
+/* BOARD */
+.board{
+  display:grid;
+  grid-template-columns:repeat(3,110px);
+  gap:15px;
+  justify-content:center;
+  margin:30px auto;
+  animation:zoomIn 1s ease;
+}
+
+/* CELL */
+.cell{
+  width:110px;
+  height:110px;
+  background:white;
+  border-radius:15px;
+  font-size:45px;
+  font-weight:bold;
+  color:#764ba2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* HOVER EFFECT */
+.cell:hover{
+  transform:scale(1.1);
+  background:#ffcc00;
+  color:black;
+}
+
+/* STATUS TEXT */
+#status{
+  font-size:22px;
+  margin-top:10px;
+  animation:fadeUp 1s;
+}
+
+/* BUTTON */
+button{
+  margin-top:15px;
+  padding:12px 30px;
+  font-size:16px;
+  font-weight:bold;
+  border:none;
+  border-radius:25px;
+  background:#ffcc00;
+  color:black;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes zoomIn{
+  from{opacity:0;transform:scale(0.8)}
+  to{opacity:1;transform:scale(1)}
+}
+
+
+
+
+
+/* CAMERA SHAKE EFFECT */
+body.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-6px, 4px); }
+  40%  { transform: translate(6px, -4px); }
+  60%  { transform: translate(-6px, -4px); }
+  80%  { transform: translate(6px, 4px); }
+  100% { transform: translate(0); }
+}
+
